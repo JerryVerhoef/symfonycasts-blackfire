@@ -8,9 +8,9 @@ class GitHubApiHelper
 {
     private $httpClient;
 
-    public function __construct(HttpClientInterface $httpClient)
+    public function __construct(HttpClientInterface $cachingHttpClient)
     {
-        $this->httpClient = $httpClient;
+        $this->httpClient = $cachingHttpClient;
     }
 
     public function getOrganizationInfo(string $organization): GitHubOrganization
